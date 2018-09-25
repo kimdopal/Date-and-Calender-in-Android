@@ -6,26 +6,25 @@ import java.util.Date;
 
 public class CustomDate {
 
-    public String dateOfCreateAsString;
-    public Calendar dateOfCreateAsCalendar;
-    public Date dateOfCreateAsDate;
+    private String dateOfCreateAsString;
+    private Calendar dateOfCreateAsCalendar;
+    private Date dateOfCreateAsDate;
 
-    public String dateOfUpdateAsString;
-    public Calendar dateOfUpdateAsCalendar;
-    public Date dateOfUpdateAsDate;
+    private String dateOfUpdateAsString;
+    private Calendar dateOfUpdateAsCalendar;
+    private Date dateOfUpdateAsDate;
 
     // Custom Date Pattern: you can update it for each object
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss z");
+    private SimpleDateFormat dateFormat;
 
     //TODO be sure to add init method to all Constructor in the App :
 
-    public CustomDate(){
+    CustomDate(){
         initTimeOfCreate();
+        dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss z");
     }
 
-    public void initTimeOfCreate(){
-
-
+    private void initTimeOfCreate(){
         // Set the creation Time :
         dateOfCreateAsCalendar = Calendar.getInstance();
         dateOfCreateAsDate = dateOfCreateAsCalendar.getTime();
@@ -45,53 +44,28 @@ public class CustomDate {
     /**
      * Setter And Getter
      */
-
     public String getDateOfCreateAsString() {
         return dateOfCreateAsString;
-    }
-
-    public void setDateOfCreateAsString(String dateOfCreateAsString) {
-        this.dateOfCreateAsString = dateOfCreateAsString;
     }
 
     public Calendar getDateOfCreateAsCalendar() {
         return dateOfCreateAsCalendar;
     }
 
-    public void setDateOfCreateAsCalendar(Calendar dateOfCreateAsCalendar) {
-        this.dateOfCreateAsCalendar = dateOfCreateAsCalendar;
-    }
-
     public Date getDateOfCreateAsDate() {
         return dateOfCreateAsDate;
-    }
-
-    public void setDateOfCreateAsDate(Date dateOfCreateAsDate) {
-        this.dateOfCreateAsDate = dateOfCreateAsDate;
     }
 
     public String getDateOfUpdateAsString() {
         return dateOfUpdateAsString;
     }
 
-    public void setDateOfUpdateAsString(String dateOfUpdateAsString) {
-        this.dateOfUpdateAsString = dateOfUpdateAsString;
-    }
-
     public Calendar getDateOfUpdateAsCalendar() {
         return dateOfUpdateAsCalendar;
     }
 
-    public void setDateOfUpdateAsCalendar(Calendar dateOfUpdateAsCalendar) {
-        this.dateOfUpdateAsCalendar = dateOfUpdateAsCalendar;
-    }
-
     public Date getDateOfUpdateAsDate() {
         return dateOfUpdateAsDate;
-    }
-
-    public void setDateOfUpdateAsDate(Date dateOfUpdateAsDate) {
-        this.dateOfUpdateAsDate = dateOfUpdateAsDate;
     }
 
     public SimpleDateFormat getDateFormat() {
