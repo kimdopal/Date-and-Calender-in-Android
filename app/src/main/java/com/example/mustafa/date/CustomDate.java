@@ -14,6 +14,9 @@ public class CustomDate {
     public Calendar dateOfUpdateAsCalendar;
     public Date dateOfUpdateAsDate;
 
+    // Custom Date Pattern: you can update it for each object
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss z");
+
     //TODO be sure to add init method to all Constructor in the App :
 
     public CustomDate(){
@@ -21,8 +24,7 @@ public class CustomDate {
     }
 
     public void initTimeOfCreate(){
-        // Custom Date Pattern:
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss z");
+
 
         // Set the creation Time :
         dateOfCreateAsCalendar = Calendar.getInstance();
@@ -35,7 +37,6 @@ public class CustomDate {
     public void updateLastUpdateTime(){
         // Set the last update Time :
         dateOfUpdateAsCalendar = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss z");
         dateOfUpdateAsDate = dateOfUpdateAsCalendar.getTime();
         dateOfUpdateAsString = dateFormat.format(dateOfUpdateAsDate);
     }
@@ -91,5 +92,13 @@ public class CustomDate {
 
     public void setDateOfUpdateAsDate(Date dateOfUpdateAsDate) {
         this.dateOfUpdateAsDate = dateOfUpdateAsDate;
+    }
+
+    public SimpleDateFormat getDateFormat() {
+        return dateFormat;
+    }
+
+    public void setDateFormat(String str_dateFormat) {
+        this.dateFormat = new SimpleDateFormat(str_dateFormat);
     }
 }

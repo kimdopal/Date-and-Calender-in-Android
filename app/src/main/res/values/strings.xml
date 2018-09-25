@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Date</string>
+    <string name="log">Log</string>
 </resources>
